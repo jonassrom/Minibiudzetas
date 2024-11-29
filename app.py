@@ -37,6 +37,14 @@ while True:
         except ValueError:
             print("Klaida, įveskite teisingą sumą. \n")
 
+    elif pasirinkimas == "3":
+        if not pajamos:
+            print("Pajamos dar neįvestos")
+        else:
+            print("\n ---- Pajamų sąrašas ----")
+            for pajamu_suma, pajamu_rusis in pajamos:
+                print(f"{pajamu_rusis}: {pajamu_suma} EUR")
+
 
 
 
