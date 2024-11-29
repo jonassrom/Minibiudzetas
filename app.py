@@ -1,4 +1,6 @@
 import datetime
+import pickle
+
 pajamos = []
 islaidos = []
 
