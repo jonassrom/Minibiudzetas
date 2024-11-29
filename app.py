@@ -27,6 +27,16 @@ while True:
         except ValueError:
             print("Klaida, įveskite teisingą sumą. \n")
 
+    elif pasirinkimas == "2":
+        try:
+            islaidu_suma = float(input("Įveskite norimas išlaidas > "))
+            islaidu_rusis = input("Įveskite išlaidų rūšį > ")
+            islaidos.append((islaidu_suma, islaidu_rusis))
+            print("Išlaidos įvestos!\n")
+        except ValueError:
+            print("Klaida, įveskite teisingą sumą. \n")
+
+
 
 
 
