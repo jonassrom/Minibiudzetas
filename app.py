@@ -18,20 +18,20 @@ while True:
 
     elif pasirinkimas == "1":
         try:
-            data = datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S")
+            # data = datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S")
             suma = float(input("Įveskite norimas pajamas > "))
             rusis = input("Įveskite pajamų rūšį > ")
-            pajamos.append((data, suma, rusis))
+            pajamos.append((suma, rusis))
             print("Pajamos įvestos!\n")
         except ValueError:
             print("Klaida, įveskite teisingą sumą. \n")
 
     elif pasirinkimas == "2":
         try:
-            data = datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S")
+            # data = datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S")
             suma = float(input("Įveskite norimas išlaidas > "))
             rusis = input("Įveskite išlaidų rūšį > ")
-            islaidos.append((data, suma, rusis))
+            islaidos.append((suma, rusis))
             print("Išlaidos įvestos!\n")
         except ValueError:
             print("Klaida, įveskite teisingą sumą. \n")
@@ -41,8 +41,8 @@ while True:
             print("Pajamos dar neįvestos")
         else:
             print("\n ---- Pajamų sąrašas ----")
-            for data, suma, rusis in pajamos:
-                print(f"<<{data}>> {rusis}: {suma} EUR")
+            for suma, rusis in pajamos:
+                print(f"{rusis}: {suma} EUR")
             print()
 
     elif pasirinkimas == "4":
@@ -50,8 +50,8 @@ while True:
             print("Išlaidos dar nepridėtos")
         else:
             print("\n ---- Išlaidų sarašas ----")
-            for data, suma, rusis in islaidos:
-                print(f"<<{data}>> {rusis}: {suma} EUR")
+            for suma, rusis in islaidos:
+                print(f"{rusis}: {suma} EUR")
             print()
 
     elif pasirinkimas == "5":
