@@ -44,6 +44,16 @@ while True:
             print("\n ---- Pajamų sąrašas ----")
             for pajamu_suma, pajamu_rusis in pajamos:
                 print(f"{pajamu_rusis}: {pajamu_suma} EUR")
+            print()
+
+    elif pasirinkimas == "4":
+        if not islaidos:
+            print("Išlaidos dar nepridėtos")
+        else:
+            print("\n ---- Išlaidų sarašas ----")
+            for islaidu_suma, islaidu_rusis in islaidos:
+                print(f"{islaidu_rusis}: {islaidu_suma} EUR")
+            print()
 
 
 
