@@ -16,6 +16,7 @@ while True:
     pasirinkimas = input("Pasrinkite norimą opciją > ")
 
     if pasirinkimas == "q":
+        print("Išėjote iš meniu")
         break
 
     elif pasirinkimas == "1":
