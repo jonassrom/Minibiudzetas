@@ -14,11 +14,21 @@ while True:
           "q - Išeiti\n")
 
     pasirinkimas = input("Pasrinkite norimą opciją > ")
+
     if pasirinkimas == "q":
         break
 
-    if pasirinkimas == "1":
-        while True:
-           suma = input("Įveskite norimas pajamas > ")
+    elif pasirinkimas == "1":
+        try:
+            pajamu_suma = float(input("Įveskite norimas pajamas > "))
+            pajamu_rusis = input("Įveskite pajamų rūšį > ")
+            pajamos.append((pajamu_suma, pajamu_rusis))
+            print("Pajamos įvestos!\n")
+        except ValueError:
+            print("Klaida, įveskite teisingą sumą. \n")
+
+
+
+
 
 
