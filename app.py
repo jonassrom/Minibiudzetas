@@ -21,18 +21,18 @@ while True:
 
     elif pasirinkimas == "1":
         try:
-            pajamu_suma = float(input("Įveskite norimas pajamas > "))
-            pajamu_rusis = input("Įveskite pajamų rūšį > ")
-            pajamos.append((pajamu_suma, pajamu_rusis))
+            suma = float(input("Įveskite norimas pajamas > "))
+            rusis = input("Įveskite pajamų rūšį > ")
+            pajamos.append((suma, rusis))
             print("Pajamos įvestos!\n")
         except ValueError:
             print("Klaida, įveskite teisingą sumą. \n")
 
     elif pasirinkimas == "2":
         try:
-            islaidu_suma = float(input("Įveskite norimas išlaidas > "))
-            islaidu_rusis = input("Įveskite išlaidų rūšį > ")
-            islaidos.append((islaidu_suma, islaidu_rusis))
+            suma = float(input("Įveskite norimas išlaidas > "))
+            rusis = input("Įveskite išlaidų rūšį > ")
+            islaidos.append((suma, rusis))
             print("Išlaidos įvestos!\n")
         except ValueError:
             print("Klaida, įveskite teisingą sumą. \n")
@@ -42,8 +42,8 @@ while True:
             print("Pajamos dar neįvestos")
         else:
             print("\n ---- Pajamų sąrašas ----")
-            for pajamu_suma, pajamu_rusis in pajamos:
-                print(f"{pajamu_rusis}: {pajamu_suma} EUR")
+            for suma, rusis in pajamos:
+                print(f"{rusis}: {suma} EUR")
             print()
 
     elif pasirinkimas == "4":
@@ -51,9 +51,23 @@ while True:
             print("Išlaidos dar nepridėtos")
         else:
             print("\n ---- Išlaidų sarašas ----")
-            for islaidu_suma, islaidu_rusis in islaidos:
-                print(f"{islaidu_rusis}: {islaidu_suma} EUR")
+            for suma, rusis in islaidos:
+                print(f"{rusis}: {suma} EUR")
             print()
+
+    elif pasirinkimas == "5":
+        pajamu_suma = sum([suma for suma, _ in pajamos])
+        islaidu_suma = sum([suma for suma, _ in islaidos])
+        balansas = pajamu_suma - islaidu_suma
+        print("\n ---- Statistika ----")
+        print(f"Pajamos: {pajamu_suma} EUR")
+        print(f"Išlaidos: {islaidu_suma} EUR")
+        print(f"Balansas: {balansas} EUR \n")
+        print()
+
+
+
+
 
 
 
