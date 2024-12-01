@@ -6,6 +6,7 @@ import os
 pajamos = []
 islaidos = []
 
+
 def issaugoti_duomenis():
     try:
         with open('biudzetas.pkl', 'wb') as file:
@@ -28,6 +29,7 @@ def uzkrauti_duomenis():
     else:
         print("Nėra rastas duomenų failas.\n")
 
+
 while True:
     print("1. Įvesti pajamas\n"
           "2. Įvesti išlaidas\n"
@@ -44,7 +46,6 @@ while True:
 
     elif pasirinkimas == "1":
         try:
-
             data = datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S")
             suma = float(input("Įveskite norimas pajamas > "))
             rusis = input("Įveskite pajamų rūšį > ")
@@ -66,27 +67,26 @@ while True:
             print("Klaida, įveskite teisingą sumą. \n")
 
     elif pasirinkimas == "3":
-        if not pajamos:
-            print("Pajamos dar neįvestos")
-        else:
+        if pajamos:
             print("\n ---- Pajamų sąrašas ----")
-            for data, suma, rusis in pajamos:
-                print(f"<{data}> {rusis}: {suma} EUR")
-
+            for pajamos_eilute in pajamos:
+                print(f"<{pajamos_eilute[0]}> {pajamos_eilute[1]}: {pajamos_eilute[2]} EUR")
+        else:
+            print("Pajamos dar neįvestos")
             print()
 
     elif pasirinkimas == "4":
-        if not islaidos:
-            print("Išlaidos dar nepridėtos")
-        else:
+        if islaidos:
             print("\n ---- Išlaidų sarašas ----")
-            for data, suma, rusis in islaidos:
-                print(f"<{data}> {rusis}: {suma} EUR")
-            print()
+            for islaidos_eilute in islaidos:
+                print(f"<{islaidos_eilute[0]}> {islaidos_eilute[1]}: {islaidos_eilute[2]} EUR")
+            else:
+                print("Išlaidos dar nepridėtos")
+                print()
 
     elif pasirinkimas == "5":
-            pajamu_suma = sum([suma for suma, _ in pajamos])
-            islaidu_suma = sum([suma for suma, _ in islaidos])
+            pajamu_suma = sum([eilute[1] for eilute, _ in pajamos])
+            islaidu_suma = sum([eilute[1] for eilute, _ in islaidos])
             balansas = pajamu_suma - islaidu_suma
             print("\n ---- Statistika ----")
             print(f"Pajamos: {pajamu_suma} EUR")
@@ -94,7 +94,7 @@ while True:
             print(f"Balansas: {balansas} EUR \n")
 
 
-# if __name__ == "__main__":
+if __name__ == "__main__":
     uzkrauti_duomenis()
 
 
