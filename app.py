@@ -30,6 +30,8 @@ def uzkrauti_duomenis():
         print("Nėra rastas duomenų failas.\n")
 
 
+uzkrauti_duomenis()
+
 while True:
     print("1. Įvesti pajamas\n"
           "2. Įvesti išlaidas\n"
@@ -85,18 +87,10 @@ while True:
                 print()
 
     elif pasirinkimas == "5":
-            pajamu_suma = sum([eilute[1] for eilute, _ in pajamos])
-            islaidu_suma = sum([eilute[1] for eilute, _ in islaidos])
-            balansas = pajamu_suma - islaidu_suma
-            print("\n ---- Statistika ----")
-            print(f"Pajamos: {pajamu_suma} EUR")
-            print(f"Išlaidos: {islaidu_suma} EUR")
-            print(f"Balansas: {balansas} EUR \n")
-
-
-if __name__ == "__main__":
-    uzkrauti_duomenis()
-
-
-
-
+        pajamu_suma = sum([eilute[1] for eilute in pajamos])
+        islaidu_suma = sum([eilute[1] for eilute in islaidos])
+        balansas = pajamu_suma - islaidu_suma
+        print("\n ---- Statistika ----")
+        print(f"Pajamos: {pajamu_suma} EUR")
+        print(f"Išlaidos: {islaidu_suma} EUR")
+        print(f"Balansas: {balansas} EUR \n")
